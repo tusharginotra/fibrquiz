@@ -1,14 +1,11 @@
 
 import './App.css';
-import LoginButton from './Components/LoginButton';
-import LogoutButton from './Components/LogoutButton';
-import Profile from './Components/Profile';
+import Header from './Components/Header';
+
 function App() {
   return (
     <div className="App">
-      <LoginButton/>
-      <LogoutButton/>
-      <Profile/>
+      <Header/>
     </div>
   );
 }
