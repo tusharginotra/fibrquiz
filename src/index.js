@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Auth0Provider } from '@auth0/auth0-react';
-
+import { SnackbarProvider } from "notistack";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -15,7 +15,17 @@ root.render(
       redirect_uri: window.location.origin
     }}
   >
+    <SnackbarProvider
+          maxSnack={1}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "center",
+          }}
+          preventDuplicate
+          autoHideDuration={2000}
+        >
     <App />
+    </SnackbarProvider>
     </Auth0Provider>
   </React.StrictMode>
 );

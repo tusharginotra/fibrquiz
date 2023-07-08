@@ -4,7 +4,13 @@ export const questions =
       "id": 0,
       "question": "______ provide a way to pass data from one component to another. Fill in the blank.",
       "type": "FIB",
-      "correctAnswer": "props"
+      "correctAnswer": [0,1],
+      "choices": [
+        "props",
+        "Original DOM",
+        "Both A and B",
+        "None of the above"
+      ],
     },
     {
       "id": 1,
@@ -16,7 +22,7 @@ export const questions =
         "None of the above"
       ],
       "type": "MCQs",
-      "correctAnswer": "Virtual DOM"
+      "correctAnswer": [0]
     },
     {
       "id": 2,
@@ -28,7 +34,7 @@ export const questions =
         "None of the above"
       ],
       "type": "MCQs",
-      "correctAnswer": "User Interface framework"
+      "correctAnswer": [1]
     },
     {
       "id": 3,
@@ -40,7 +46,7 @@ export const questions =
         "props"
       ],
       "type": "MCQs",
-      "correctAnswer": "props"
+      "correctAnswer": [3]
     },
     {
       "id": 4,
@@ -52,7 +58,7 @@ export const questions =
         "JavaScript"
       ],
       "type": "MCQs",
-      "correctAnswer": "JavaScript"
+      "correctAnswer": [3]
     },
     {
       "id": 5,
@@ -64,6 +70,6 @@ export const questions =
         "None of the above"
       ],
       "type": "MCQs",
-      "correctAnswer": "JavaScript compiler"
+      "correctAnswer": [2]
     }
   ]

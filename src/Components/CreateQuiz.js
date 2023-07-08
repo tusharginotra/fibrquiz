@@ -2,9 +2,11 @@ import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { Box, Button, Checkbox, FormControlLabel, FormGroup, TextField, Typography } from '@mui/material';
 import './CreateQuiz.css'
+import { useSnackbar } from "notistack";
 import axios from 'axios';
-
+import config from '../config/config';
 function CreateQuiz() {
+  const { enqueueSnackbar } = useSnackbar();
     const [questions, setQuestions] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState('');
   const [choices, setChoices] = useState(['', '', '', '']);
@@ -41,7 +43,7 @@ function CreateQuiz() {
       choices: choices.filter(option => option !== ''),
       correctAnswer: correctAnswer
     };
-    alert("question added")
+    enqueueSnackbar("Question added",{variant:"success"});
     setQuestions(prevQuestions => [...prevQuestions, question]);
     setCurrentQuestion('');
     setChoices(['', '', '', '']);
@@ -62,8 +64,9 @@ function CreateQuiz() {
     }
     
     try{
-      const response = await axios.post("http://localhost:8082/newquiz", bodyData)
+      const response = await axios.post(`${config.endpoint}/newquiz`, bodyData)
       console.log("response arrived",response)
+      enqueueSnackbar("Quiz Created",{variant:"success"})
       setCurrentQuestion('');
       setChoices(['', '', '', '']);
       setCorrectAnswer([]);
